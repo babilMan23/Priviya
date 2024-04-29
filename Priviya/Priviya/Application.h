@@ -4,6 +4,7 @@
 #include "util/Debug.h"
 #include "windowing/Window.h"
 #include "gui/GUI.h"
+#include "renderer/entities/Model.h"
 
 namespace Priviya {
 	class Application {

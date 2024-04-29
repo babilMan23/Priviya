@@ -2,6 +2,7 @@
 
 #include "../Core.h"
 #include "../util/Debug.h"
+#include "entities/Model.h"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -12,6 +13,9 @@ namespace Priviya {
 		GL() = default;
 		~GL() = default;
 	
+		void prepare();
+		void render(Model model);
+
 		static bool create(bool debugContext);
 		static PV_REF<Priviya::GL> getGL();
 	private:

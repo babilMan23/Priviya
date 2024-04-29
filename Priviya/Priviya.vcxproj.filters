@@ -69,6 +69,15 @@
     <ClInclude Include="Priviya\renderer\elements\VAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Priviya\renderer\elements\BufferObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Priviya\renderer\entities\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Priviya\shaders\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Priviya\Application.cpp">
@@ -137,5 +146,17 @@
     <ClCompile Include="Priviya\renderer\elements\VAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Priviya\renderer\elements\BufferObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Priviya\renderer\entities\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Priviya\shaders\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\Default.glsl" />
   </ItemGroup>
 </Project>

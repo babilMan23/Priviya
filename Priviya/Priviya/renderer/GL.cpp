@@ -2,6 +2,19 @@
 
 static PV_REF<Priviya::GL> opengl;
 
+void Priviya::GL::prepare() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(1, 1, 0, 1);
+}
+
+void Priviya::GL::render(Model model) {
+    model.vao.bind();
+    glEnableVertexAttribArray(0);
+    glDrawElements(GL_TRIANGLES, model.vertexCount, GL_UNSIGNED_INT, 0);
+    glDisableVertexAttribArray(0);
+    model.vao.unbind();
+}
+
 bool Priviya::GL::create(bool debugContext) {
 
     PV_REF<Priviya::GL> glContext = std::make_shared<Priviya::GL>();

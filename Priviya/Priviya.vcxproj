@@ -119,7 +119,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)libs\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,10 +139,12 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)libs\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Priviya\renderer\entities\Model.h" />
+    <ClInclude Include="Priviya\renderer\elements\BufferObject.h" />
     <ClInclude Include="Priviya\gui\GUI.h" />
     <ClInclude Include="Priviya\maths\Maths.h" />
     <ClInclude Include="Priviya\renderer\GL.h" />
@@ -161,8 +163,11 @@
     <ClInclude Include="Priviya\windowing\Window.h" />
     <ClInclude Include="Priviya\windowing\WindowCallbacks.h" />
     <ClInclude Include="Priviya\renderer\elements\VAO.h" />
+    <ClInclude Include="Priviya\shaders\Shader.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Priviya\renderer\entities\Model.cpp" />
+    <ClCompile Include="Priviya\renderer\elements\BufferObject.cpp" />
     <ClCompile Include="Priviya\gui\GUI.cpp" />
     <ClCompile Include="Priviya\renderer\GL.cpp" />
     <ClCompile Include="Priviya\util\Debug.cpp" />
@@ -185,6 +190,10 @@
     <ClCompile Include="Priviya\windowing\Window.cpp" />
     <ClCompile Include="Priviya\windowing\WindowCallbacks.cpp" />
     <ClCompile Include="Priviya\renderer\elements\VAO.cpp" />
+    <ClCompile Include="Priviya\shaders\Shader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\Default.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

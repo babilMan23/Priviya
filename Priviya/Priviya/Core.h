@@ -4,14 +4,14 @@
 #include <memory>
 
 typedef int PVResult;
-typedef unsigned int uint;
+typedef uint32_t uint;
 typedef std::string string;
 
 template<typename T>
 using PV_REF = std::shared_ptr<T>;
 
 template<typename T>
-using PV_POI = std::unique_ptr<T>;
+using PV_UNQ = std::unique_ptr<T>;
 
 #ifdef PV_BUILD_DLL
 	#define PV_API __declspec(dllexport)

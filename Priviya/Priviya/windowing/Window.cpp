@@ -9,7 +9,7 @@ bool Priviya::Window::create(int width, int height, const std::string& title, bo
 
 	if (debugContext) {
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 		glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
 	} else {
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);

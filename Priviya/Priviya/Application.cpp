@@ -20,17 +20,34 @@ namespace Priviya {
 		GUIManager gui;
 		gui.init(window.getWindow());
 
+		std::vector<float> vertices = {
+			// Position (x, y, z)
+			-0.5f,  0.5f, 0.0f,   // Top left
+			0.5f,  0.5f, 0.0f,   // Top right
+			0.5f, -0.5f, 0.0f,   // Bottom right
+			-0.5f, -0.5f, 0.0f    // Bottom left
+		};
+
+		std::vector<uint> indices = {
+			0, 1, 2,   // First triangle (top right, top left, bottom right)
+			2, 3, 0    // Second triangle (bottom right, bottom left, top left)
+		};
+
+		Model model;
+		model.create(vertices, indices);
+
 		glfwShowWindow(window.getWindow());
 
 		while (!glfwWindowShouldClose(window.getWindow())) {
 			window.update();
 
-			glClear(GL_COLOR_BUFFER_BIT);
-			glClearColor(1, 1, 0, 1);
-
-			gui.update();
+			GL::getGL()->prepare();
 
 			updateCallbacks(window.getWindow(), &urv);
+
+			GL::getGL()->render(model);
+
+			gui.update();
 
 			window.swapBuffers();
 		}
