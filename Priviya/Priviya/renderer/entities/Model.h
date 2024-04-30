@@ -6,7 +6,7 @@ namespace Priviya {
 	class Model {
 	public:
 
-		void create(std::vector<float> vertices, std::vector<uint> indices);
+		void create(std::string path);
 
 		VAO vao;
 		uint vertexCount;

@@ -3,8 +3,14 @@
 static PV_REF<Priviya::GL> opengl;
 
 void Priviya::GL::prepare() {
-    glClear(GL_COLOR_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
+    
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClearColor(1, 1, 0, 1);
+}
+
+void Priviya::GL::prepareFBO() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void Priviya::GL::render(Model model) {
@@ -160,6 +166,17 @@ void Priviya::GL::GLDebugMessageCallback(GLenum source, GLenum type, GLuint id, 
 
     if (_severity == "NOTIFICATION") return;
 
-    printf("%d: %s of %s severity, raised from %s: %s\n",
-        id, _type, _severity, _source, msg);
+    if (_severity == "HIGH") {
+        PV_ERROR("{}: {} of {} severity, raised from {}: {}",
+            id, _type, _severity, _source, msg);
+    } else if (_severity == "MEDIUM") {
+        PV_WARN("{}: {} of {} severity, raised from {}: {}",
+            id, _type, _severity, _source, msg);
+    } else if (_severity == "LOW") {
+        PV_INFO("{}: {} of {} severity, raised from {}: {}",
+            id, _type, _severity, _source, msg);
+    } else {
+        printf("%d: %s of %s severity, raised from %s: %s\n",
+            id, _type, _severity, _source, msg);
+    }
 }

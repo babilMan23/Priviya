@@ -78,6 +78,15 @@
     <ClInclude Include="Priviya\shaders\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Priviya\renderer\tools\EntityRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Priviya\renderer\elements\FBO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Priviya\Application.cpp">
@@ -155,8 +164,14 @@
     <ClCompile Include="Priviya\shaders\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="res\shaders\Default.glsl" />
+    <ClCompile Include="Priviya\renderer\tools\EntityRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Priviya\renderer\elements\FBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

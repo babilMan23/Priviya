@@ -14,6 +14,7 @@ namespace Priviya {
 		~GL() = default;
 	
 		void prepare();
+		void prepareFBO();
 		void render(Model model);
 
 		static bool create(bool debugContext);

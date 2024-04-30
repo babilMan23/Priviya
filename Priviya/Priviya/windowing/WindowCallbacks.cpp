@@ -7,6 +7,8 @@ void Priviya::initializeCallbacks() {
 
 void Priviya::framebuffer_size_callback(GLFWwindow* window, int w, int h) {
 	glViewport(0, 0, w, h);
+    FBO* fbo = reinterpret_cast<FBO*>(glfwGetWindowUserPointer(window));
+    fbo->ResizeFBO(w, h);
 }
 
 void Priviya::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {

@@ -19,6 +19,8 @@ namespace Priviya {
 		void use();
 		void disable();
 		void destroy();
+
+		virtual void generate()=0;
 	protected:
 		void create(string name);
 	private:
@@ -27,5 +29,13 @@ namespace Priviya {
 		ShaderSource readFile(string path);
 	private:
 		uint vs, fs, program;
+	};
+
+	class DefaultShader : public Shader {
+	public:
+		DefaultShader() = default;
+		~DefaultShader() = default;
+
+		void generate() override;
 	};
 }

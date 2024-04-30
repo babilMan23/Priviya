@@ -28,15 +28,37 @@ void Priviya::Shader::create(string name) {
     vs = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vs, 1, &vss, NULL);
     glCompileShader(vs);
-    GLint vertex_compiled;
-    glGetShaderiv(vs, GL_COMPILE_STATUS, &vertex_compiled);
-    if (vertex_compiled != GL_TRUE)
+    GLint success;
+    glGetShaderiv(vs, GL_COMPILE_STATUS, &success);
+    if (success != GL_TRUE)
     {
         GLsizei log_length = 0;
         GLchar message[1024];
         glGetShaderInfoLog(vs, 1024, &log_length, message);
-        PV_ERROR("Failed to initialie Vertex Shader : {}", message);
+        PV_ERROR("Failed to initialize Vertex Shader : {}", message);
+        std::cin.get();
     }
+
+    fs = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fs, 1, &fss, NULL);
+    glCompileShader(fs);
+    glGetShaderiv(fs, GL_COMPILE_STATUS, &success);
+    if (success != GL_TRUE)
+    {
+        GLsizei log_length = 0;
+        GLchar message[1024];
+        glGetShaderInfoLog(vs, 1024, &log_length, message);
+        PV_ERROR("Failed to initialize fragment Shader : {}", message);
+        std::cin.get();
+    }
+
+	program = glCreateProgram();
+    
+	glAttachShader(program, vs);
+    glAttachShader(program, fs);
+
+	glLinkProgram(program);
+    glValidateProgram(program);
 
     PV_INFO("Created Shader With Name : {}", name);
 }
@@ -78,4 +100,8 @@ Priviya::ShaderSource Priviya::Shader::readFile(string path) {
     source.fss = fss;
 
     return source;
+}
+
+void Priviya::DefaultShader::generate() {
+    create("Default");
 }

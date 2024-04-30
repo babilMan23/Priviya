@@ -143,6 +143,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Priviya\renderer\elements\FBO.h" />
+    <ClInclude Include="Priviya\renderer\tools\EntityRenderer.h" />
     <ClInclude Include="Priviya\renderer\entities\Model.h" />
     <ClInclude Include="Priviya\renderer\elements\BufferObject.h" />
     <ClInclude Include="Priviya\gui\GUI.h" />
@@ -164,8 +166,11 @@
     <ClInclude Include="Priviya\windowing\WindowCallbacks.h" />
     <ClInclude Include="Priviya\renderer\elements\VAO.h" />
     <ClInclude Include="Priviya\shaders\Shader.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Priviya\renderer\elements\FBO.cpp" />
+    <ClCompile Include="Priviya\renderer\tools\EntityRenderer.cpp" />
     <ClCompile Include="Priviya\renderer\entities\Model.cpp" />
     <ClCompile Include="Priviya\renderer\elements\BufferObject.cpp" />
     <ClCompile Include="Priviya\gui\GUI.cpp" />
@@ -191,9 +196,7 @@
     <ClCompile Include="Priviya\windowing\WindowCallbacks.cpp" />
     <ClCompile Include="Priviya\renderer\elements\VAO.cpp" />
     <ClCompile Include="Priviya\shaders\Shader.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="res\shaders\Default.glsl" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

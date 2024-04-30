@@ -6,6 +6,7 @@
 #include <memory>
 
 #include "../maths/Maths.h"
+#include "../renderer/elements/FBO.h"
 
 namespace Priviya {
 

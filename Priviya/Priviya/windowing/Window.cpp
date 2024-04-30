@@ -33,8 +33,8 @@ bool Priviya::Window::create(int width, int height, const std::string& title, bo
 	glfwMakeContextCurrent(_window);
 	GL::create(debugContext);
 	
-	glfwSetFramebufferSizeCallback(_window, Priviya::framebuffer_size_callback);
 	glfwSetKeyCallback(_window, Priviya::key_callback);
+	glfwSetFramebufferSizeCallback(_window, Priviya::framebuffer_size_callback);
 
 	PV_INFO("Create Priviya Window With ID : {}", (long) _window);
 	return true;
